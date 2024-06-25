@@ -13,7 +13,7 @@ final class Slug
     {
         Blueprint::macro('slug', function( int $length = 191){
 
-            $this->string( 'slug' )->unique();
+            $this->string( 'slug', $length )->unique();
         });
     }
 
