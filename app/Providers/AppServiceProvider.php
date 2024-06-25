@@ -11,7 +11,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        foreach ( glob(  app_path('Macros/Blueprint/*.php') ) as $fileName ) {
+            $fileName = basename($fileName, '.php');
+            $class ='App\\Macros\\Blueprint\\' . $fileName;
+            $this->app->call( $class );
+        }
     }
 
     /**
