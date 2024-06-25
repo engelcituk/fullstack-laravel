@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class LessonType extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'lesson_id';
+
 }
