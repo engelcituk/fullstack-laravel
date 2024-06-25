@@ -6,9 +6,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 final class UpdatedBy
 {
-    /**
-     * Register any application services.
-     */
+    
     public function __invoke(): void
     {
         Blueprint::macro('updatedBy', function( string $autorTable = 'users', string $autorColumn = 'user_id'){

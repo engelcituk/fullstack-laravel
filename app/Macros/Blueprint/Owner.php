@@ -6,9 +6,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 final class Owner
 {
-    /**
-     * Register any application services.
-     */
+
     public function __invoke(): void
     {
         Blueprint::macro('owner', function( string $autorTable = 'users', string $autorColumn = 'user_id'){
