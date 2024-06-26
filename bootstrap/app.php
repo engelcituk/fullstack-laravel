@@ -11,7 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        // $middleware->appendToGroup('backoffice', [...]);
+        $middleware->redirectTo(
+            users: fn() => auth()->user()->getRedirectUrl(),
+        );
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
