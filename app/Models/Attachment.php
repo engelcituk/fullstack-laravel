@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Attachment extends Model
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+
+class Attachment extends Base\Attachment
 {
-    use HasFactory;
-
-    protected $primaryKey = 'attachment_id';
-
+    public function attachable(): MorphTo
+    {
+        return $this->morphTo();
+    }
 }

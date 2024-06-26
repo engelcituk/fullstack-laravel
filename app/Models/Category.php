@@ -2,13 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Builders\CategoryBuilder;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Category extends Model
+class Category extends Base\Category
 {
-    use HasFactory;
-
-    protected $primaryKey = 'category_id';
+    public function newEloquentBuilder($query): CategoryBuilder
+    {
+        return new CategoryBuilder($query);
+    }
+    public function courses(): HasMany
+    {
+        return $this->hasMany(Course::class, 'category_id', 'category_id');
+    }
 
 }

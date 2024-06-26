@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-
+use App\Models\Builders\UserBuilder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Base\User
 {
-    public function newEloquentBuilder($query): Builders\UserBuilder
+    public function newEloquentBuilder($query): UserBuilder
     {
-        return new Builders\UserBuilder($query);
+        return new UserBuilder($query);
     }
     public function courses(): HasMany
     {

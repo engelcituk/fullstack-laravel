@@ -2,13 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class LessonType extends Model
+use App\Models\Builders\LessonTypeBuilder;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+class LessonType extends Base\LessonType
 {
-    use HasFactory;
+    public function newEloquentBuilder($query): LessonTypeBuilder
+    {
+        return new LessonTypeBuilder($query);
+    }
 
-    protected $primaryKey = 'lesson_id';
+    public function lessons(): HasMany
+    {
+        return $this->hasMany(Lesson::class, 'lesson_type_id', 'lesson_type_id');
+    }
 
 }
