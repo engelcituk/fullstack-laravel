@@ -15,4 +15,12 @@ class User extends Base\User
     {
         return $this->hasMany(Course::class, 'owner_id', 'user_id');
     }
+
+    public function getRedirectUrl(): string{
+
+        return match ( $this->is_admin ){
+            true => route('backoffice.dashboard.index'),
+            false => route('dashboard'),
+        };
+    }
 }
