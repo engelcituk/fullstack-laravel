@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -23,6 +24,10 @@ class BackofficeServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->app->bind(
+            abstract: \Illuminate\Pagination\LengthAwarePaginator::class,
+            concrete: \App\Overrides\LengthAwarePaginator::class
+        );
+
     }
 }
