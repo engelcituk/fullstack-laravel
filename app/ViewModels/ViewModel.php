@@ -2,6 +2,7 @@
 
 namespace App\ViewModels;
 
+use App\Traits\ViewModels\WithSkeleton;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Str;
 use Reflection;
@@ -10,6 +11,7 @@ use ReflectionMethod;
 
 abstract class ViewModel implements  Arrayable
 {
+    use WithSkeleton;
     public function toArray(): array{
 
         return collect( ( new ReflectionClass($this) )
