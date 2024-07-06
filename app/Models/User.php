@@ -5,6 +5,10 @@ namespace App\Models;
 use App\Models\Builders\UserBuilder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @property int $id
+ * @property string $name
+ */
 class User extends Base\User
 {
     public function newEloquentBuilder($query): UserBuilder

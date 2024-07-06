@@ -6,5 +6,4 @@ interface SidebarItem {
 
     public function toArray():array;
 
-
 }
