@@ -21,7 +21,7 @@ class SidebarLink implements SidebarItem
         return [
             'component' => self::COMPONENT,
             'props' => [
-                'text' => $this->text,
+                'text' => __($this->text),
                 'href' => $this->href,
                 'iconComponent' => $this->iconComponent,
                 'current' => $this->current,
