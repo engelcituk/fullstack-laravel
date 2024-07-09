@@ -1,6 +1,3 @@
 <?php
 
-use App\Http\Controllers\Backoffice\DashboardController;
-use Illuminate\Support\Facades\Route;
-
-route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::jsonGroup('dashboard', \App\Http\Controllers\Backoffice\DashboardController::class, ['index', 'json'] );
