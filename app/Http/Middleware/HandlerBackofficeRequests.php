@@ -24,9 +24,9 @@ class HandlerBackofficeRequests
             ->addSidebarItem(
                 new SidebarLink(
                     text: 'Dashboard',
-                    href: '#',
+                    href: route('backoffice.dashboard.index'),
                     iconComponent: Heroicons::HOME,
-                    current: false
+                    current: request()->routeIs('backoffice.dashboard.index')
                 ),
             )
             ->addSidebarItem( new SidebarSeparator() )
@@ -37,7 +37,7 @@ class HandlerBackofficeRequests
                     iconComponent: Heroicons::LOGOUT,
                     current: false,
                 )
-            )
+            )->getSidebarItems()
         );
 
         return $next($request);
