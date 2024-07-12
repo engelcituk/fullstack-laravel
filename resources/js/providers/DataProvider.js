@@ -55,7 +55,7 @@ export default defineComponent({
                 .then( json => data.value = json )
                 .then( json => emit('refreshed', json ) )
                 .catch( err => error.value = err)
-                .finally( ()=> loading.value = false )
+                .finally( () => loading.value = false )
         }
 
         fetchData()
