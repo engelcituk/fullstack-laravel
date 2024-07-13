@@ -9,7 +9,7 @@ use App\Models\User;
 use App\Services\Frontend\UIElements\StatItems\StatDefault;
 use App\Services\Frontend\StatsGenerator;
 use App\Traits\ViewModels\WithUser;
-use App\ViewModels\VielModel;
+use App\ViewModels\ViewModel;
 
 class GetDashboardViewModel extends ViewModel {
 

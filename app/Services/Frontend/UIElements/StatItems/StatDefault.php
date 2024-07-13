@@ -20,7 +20,7 @@ class StatDefault implements StatItem {
     public function toArray(): array
     {
         return [
-            'id' => $this->id;,
+            'id' => $this->id,
             'component' => self::COMPONENT,
             'props' => [
                 'label' => __( $this->label ),
